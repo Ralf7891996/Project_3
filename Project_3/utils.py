@@ -1,4 +1,4 @@
-import json
+import json
 
 
 def get_posts_all():
@@ -32,8 +32,6 @@ def get_comments_by_post_id(post_id):
         for comment in comments:
             if comment['post_id'] == int(post_id):
                 comments_post.append(comment)
-        if not comments_post:
-            raise ValueError("нет комментариев")
         return comments_post
 
 
