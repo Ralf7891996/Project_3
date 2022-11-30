@@ -40,12 +40,12 @@ def search_users(user_name):
 
 # Добавляем обработчики ошибок
 @app.errorhandler(404)
-def not_found():
+def not_found(e):
     return render_template('error_404.html')
 
 
 @app.errorhandler(500)
-def server_error():
+def server_error(e):
     return render_template('error_500.html')
 
 

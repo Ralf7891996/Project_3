@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SKYPROGRAM user feed</title>
+  <title>   SKYPROGRAM user feed</title>
   <link href="/static/css/styles.min.css" rel="stylesheet">
 </head>
 
@@ -17,24 +17,22 @@
         </svg>
       </a>
       <a href="/" class="header__logo-link">
-        <h1 class="header__logo-text">SKYPROGRAM search user</h1>
+        <h1 class="header__logo-text">user</h1>
       </a>
     </div>
   </header>
-
   <main class="container">
     <div class="items__item item">
+      {% for post in posts %}
       <div class="item__top">
-        <a href="/user-feed.html" class="item__head">
+        <a href="/user/{{ post.poster_name }}" class="item__head">
           <div class="item__ava-wrap">
-
-            {% for post in posts %}
             <img src="{{ post.poster_avatar }}" alt="" class="item__ava" width="47">
           </div>
           <span class="item__username"> {{ post.poster_name }} </span>
         </a>
       </div>
-      <a href="/post.html" class="item__post-link">
+      <a href="/posts/{{post.pk}}" class="item__post-link">
         <img src="{{ post.pic }}}}" alt="" width="348" class="item__post-img">
       </a>
       <p class="item__descr"><a href="#" class="item__tag"> #food  </a> {{ post.content|truncate(50)  }} </p>
@@ -52,7 +50,7 @@
       </div>
     </div>
 
-      {% endfor %}
+    {% endfor %}
 
   </main>
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">

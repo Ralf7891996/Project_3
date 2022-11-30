@@ -1,9 +1,10 @@
-import json
+# -*- coding: utf-8 -*-
+import json
 
 
 def get_posts_all():
     """
-    Функция загружает посты из файла Json
+    Р¤СѓРЅРєС†РёСЏ Р·Р°РіСЂСѓР¶Р°РµС‚ РїРѕСЃС‚С‹ РёР· С„Р°Р№Р»Р° Json
     """
     with open('data/posts.json', 'r', encoding='utf8') as file:
         posts = json.load(file)
@@ -12,7 +13,7 @@ def get_posts_all():
 
 def get_posts_by_user(user_name=None):
     """
-    Функция по значению user_name возвращает все посты связанные с этим user_name
+    Р¤СѓРЅРєС†РёСЏ РїРѕ Р·РЅР°С‡РµРЅРёСЋ user_name РІРѕР·РІСЂР°С‰Р°РµС‚ РІСЃРµ РїРѕСЃС‚С‹ СЃРІСЏР·Р°РЅРЅС‹Рµ СЃ СЌС‚РёРј user_name
     """
     users = get_posts_all()
     username = []
@@ -24,7 +25,7 @@ def get_posts_by_user(user_name=None):
 
 def get_comments_by_post_id(post_id):
     """
-    Функция по значению post_id) возвращает список всех комментариев, связанных с постом
+    Р¤СѓРЅРєС†РёСЏ РїРѕ Р·РЅР°С‡РµРЅРёСЋ post_id) РІРѕР·РІСЂР°С‰Р°РµС‚ СЃРїРёСЃРѕРє РІСЃРµС… РєРѕРјРјРµРЅС‚Р°СЂРёРµРІ, СЃРІСЏР·Р°РЅРЅС‹С… СЃ РїРѕСЃС‚РѕРј
     """
     with open('data/comments.json', 'r', encoding='utf8') as file:
         comments = json.load(file)
@@ -37,7 +38,7 @@ def get_comments_by_post_id(post_id):
 
 def search_for_posts(query=None):
     """
-     Функция получает на вход слово и возвращает все посты содержащие это слово
+     Р¤СѓРЅРєС†РёСЏ РїРѕР»СѓС‡Р°РµС‚ РЅР° РІС…РѕРґ СЃР»РѕРІРѕ Рё РІРѕР·РІСЂР°С‰Р°РµС‚ РІСЃРµ РїРѕСЃС‚С‹ СЃРѕРґРµСЂР¶Р°С‰РёРµ СЌС‚Рѕ СЃР»РѕРІРѕ
     """
     posts = get_posts_all()
     filter_post = []
@@ -49,7 +50,7 @@ def search_for_posts(query=None):
 
 def get_post_by_pk(pk):
     """
-    Функция возвращает пост по его индификатору
+    Р¤СѓРЅРєС†РёСЏ РІРѕР·РІСЂР°С‰Р°РµС‚ РїРѕСЃС‚ РїРѕ РµРіРѕ РёРЅРґРёС„РёРєР°С‚РѕСЂСѓ
     """
     posts = get_posts_all()
     for post in posts:
